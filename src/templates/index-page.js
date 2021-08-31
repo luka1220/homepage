@@ -4,22 +4,11 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { RiArrowRightSLine } from "react-icons/ri"
 import {
-  RiFacebookBoxFill,
   RiTwitterFill,
   RiLinkedinBoxFill,
-  RiYoutubeFill,
-  RiInstagramFill,
-  RiRssFill,
   RiGithubFill,
-  RiTelegramFill,
-  RiPinterestFill,
-  RiSnapchatFill,
-  RiSkypeFill,
-  RiDribbbleFill,
-  RiMediumFill,
-  RiBehanceFill,
+  RiMediumFill
 } from "react-icons/ri"
-import { FaWordpress, FaVk } from "react-icons/fa"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
@@ -34,6 +23,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tagline
+        contact
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED, width: 585, height: 439)
@@ -79,115 +69,31 @@ const HomePage = ({ data }) => {
   const sIcons = Icons.socialIcons.map((icons, index) => {
     return (
       <div key={"social icons" + index}>
-        {icons.icon === "facebook" ? (
-          <Link to={icons.url} target="_blank">
-            <RiFacebookBoxFill />
-          </Link>
-        ) : (
-          ""
-        )}
         {icons.icon === "twitter" ? (
-          <Link to={icons.url} target="_blank">
+          <a href={icons.url}>
             <RiTwitterFill />
-          </Link>
+          </a>
         ) : (
           ""
         )}
         {icons.icon === "linkedin" ? (
-          <Link to={icons.url} target="_blank">
+          <a href={icons.url}>
             <RiLinkedinBoxFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "youtube" ? (
-          <Link to={icons.url} target="_blank">
-            <RiYoutubeFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "instagram" ? (
-          <Link to={icons.url} target="_blank">
-            <RiInstagramFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "rss" ? (
-          <Link to={icons.url} target="_blank">
-            <RiRssFill />
-          </Link>
+          </a>
         ) : (
           ""
         )}
         {icons.icon === "github" ? (
-          <Link to={icons.url} target="_blank">
+          <a href={icons.url} >
             <RiGithubFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "telegram" ? (
-          <Link to={icons.url} target="_blank">
-            <RiTelegramFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "pinterest" ? (
-          <Link to={icons.url} target="_blank">
-            <RiPinterestFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "snapchat" ? (
-          <Link to={icons.url} target="_blank">
-            <RiSnapchatFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "skype" ? (
-          <Link to={icons.url} target="_blank">
-            <RiSkypeFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "wordpress" ? (
-          <Link to={icons.url} target="_blank">
-            <FaWordpress />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "dribbble" ? (
-          <Link to={icons.url} target="_blank">
-            <RiDribbbleFill />
-          </Link>
+          </a>
         ) : (
           ""
         )}
         {icons.icon === "medium" ? (
-          <Link to={icons.url} target="_blank">
+          <a href={icons.url}>
             <RiMediumFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "behance" ? (
-          <Link to={icons.url} target="_blank">
-            <RiBehanceFill />
-          </Link>
-        ) : (
-          ""
-        )}
-        {icons.icon === "vk" ? (
-          <Link to={icons.url} target="_blank">
-            <FaVk />
-          </Link>
+          </a>
         ) : (
           ""
         )}
@@ -212,6 +118,14 @@ const HomePage = ({ data }) => {
             className="description"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          <p 
+          className="tagline" 
+          sx={{
+              color: "muted",
+            }}
+          >
+          {frontmatter.contact}
+          </p>
           <Link
             to={frontmatter.cta.ctaLink}
             className="button"

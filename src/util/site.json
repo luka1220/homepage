@@ -4,8 +4,8 @@
     "titleTemplate": "%s",
     "description": "Homepage and Blog",
     "siteUrl": "https://luka1220.github.io/about",
-    "image": "/assets/staerk_logo.png",
-    "iconimage": "/assets/staerk_logo.png",
+    "image": "/assets/staerk-logo.png",
+    "iconimage": "/assets/noun_bike_wheel.png",
     "twitterUsername": "@Lu_Kitsch"
   },
   "ga": "UA-XXXXXXXXX-X"

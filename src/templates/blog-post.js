@@ -80,7 +80,7 @@ const Post = ({ data, pageContext }) => {
     previous,
     next,
   }
-
+  
   return (
     <Layout className="page">
       <Seo
@@ -88,7 +88,7 @@ const Post = ({ data, pageContext }) => {
         description={
           frontmatter.description ? frontmatter.description : excerpt
         }
-        image={Image}
+        image={Image.images.fallback.src}
         article={true}
       />
       <article className="blog-post">

@@ -5,8 +5,12 @@
       "url": "https://www.linkedin.com/in/luka-st%C3%A4rk-9794a4212/"
     },
     {
-      "icon":"twitter",
+      "icon": "twitter",
       "url": "https://twitter.com/Lu_Kitsch"
+    },
+    {
+      "icon": "github",
+      "url": "https://github.com/luka1220"
     }
   ]
 }

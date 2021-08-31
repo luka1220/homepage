@@ -39,7 +39,9 @@ const Layout = ({ children, className, props }) => {
           <Navigation />
         </div>
         <div sx={layoutStyle.appearance}>
-          <Search searchIndex={siteSearchIndex.index} />
+          {
+          //< Search searchIndex={siteSearchIndex.index} />
+          }
           <Theme />
         </div>
       </Header>

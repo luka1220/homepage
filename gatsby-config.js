@@ -33,21 +33,6 @@ module.exports = {
         gfm: true,
         plugins: [
           netlifyCmsPaths,
-          // gatsby-remark-relative-images must go before gatsby-remark-images
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              // [Optional] The root of "media_folder" in your config.yml
-              // Defaults to "static"
-              staticFolderName: 'static',
-              // [Optional] Include the following fields, use dot notation for nested fields
-              // All fields are included by default
-              include: ['featured'],
-              // [Optional] Exclude the following fields, use dot notation for nested fields
-              // No fields are excluded by default
-              exclude: ['featured.skip'],
-            },
-          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -81,12 +66,6 @@ module.exports = {
     },
     "gatsby-plugin-sass",
     "gatsby-plugin-theme-ui",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-111111111-1",
-      },
-    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
@@ -107,8 +86,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Foundation`,
-        short_name: `Foundation`,
+        name: `Luka Stärk`,
+        short_name: `Stärk`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
