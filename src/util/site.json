@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Foundation",
+    "title": "Homepage",
     "titleTemplate": "%s",
-    "description": "A starter to launch your blazing fast personal website and a blog, Built with Gatsby and Netlify CMS. Made with ❤ by Stackrole",
-    "siteUrl": "https://foundation.stackrole.com",
-    "image": "/assets/stackrole.png",
-    "iconimage": "/assets/stackrole.png",
-    "twitterUsername": "@stackrole"
+    "description": "Homepage and Blog",
+    "siteUrl": "https://luka1220.github.io/about",
+    "image": "/assets/staerk_logo.png",
+    "iconimage": "/assets/staerk_logo.png",
+    "twitterUsername": "@Lu_Kitsch"
   },
   "ga": "UA-XXXXXXXXX-X"
 }
