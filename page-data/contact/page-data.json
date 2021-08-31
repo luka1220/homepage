@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-contact-page-js",
+    "path": "/contact",
+    "result": {"data":{"markdownRemark":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","html":"<p>Got a burning question regarding <strong>JAMstack</strong>, Need a new <strong>Website</strong>, or just anything in general. We are happy to talk.</p>\n<p>Just send us a message using the form below or you can send us a DM on <a href=\"https://twitter.com/stackrole\">Twitter</a></p>","excerpt":"Got a burning question regarding JAMstack, Need a new Website, or just anything in general. We are happy to talk. Just send us a message…","frontmatter":{"title":"Get in touch"}},"site":{"siteMetadata":{"title":"Foundation"}}},"pageContext":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","previous":{"id":"505e2e05-1449-523d-8436-dd6fbe34c66b","frontmatter":{"slug":"/character-design","template":"blog-post","title":"Character design"}},"next":{"id":"fbce9cc8-1018-5c7a-8a29-b07b313bdd15","frontmatter":{"slug":"/","template":"index-page","title":"Wyatt Morriss"}}}},
+    "staticQueryHashes": ["228695001","2744905544","358227665"]}
