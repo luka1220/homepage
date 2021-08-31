@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d public", 
+    "deploy": "gatsby build && gh-pages -d public -b main", 
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
