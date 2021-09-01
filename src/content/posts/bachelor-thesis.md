@@ -18,5 +18,5 @@ The evaluation points out the potential of Wikidata as a knowledge source for se
 
 A Think-Aloud user study with five participants conducted for this thesis shows that the recommendation feature achieves a targeted and more efficient iteration through the ideas for the clustering tool Orchard. With the novel feature, the participants reported they were able to explore the ideas for clusters of their current interest, which enabled an in-depth iteration on various topics. These observations could indicate an improvement in the idea synthesis, which could be looked at in further research.
 
-[Link](https://refubium.fu-berlin.de/handle/fub188/31751)
-[PDF](https://refubium.fu-berlin.de/bitstream/handle/fub188/31751/Bachelorarbeit_Staerk.pdf?sequence=4&isAllowed=y)
+[[**Publication**]](https://refubium.fu-berlin.de/handle/fub188/31751)
+[[**PDF**]](https://refubium.fu-berlin.de/bitstream/handle/fub188/31751/Bachelorarbeit_Staerk.pdf?sequence=4&isAllowed=y)

@@ -346,9 +346,12 @@ article img {
     margin: 0;
     color: #fff;
   }
-  a {
-    font-weight: normal;
-  }
+  .icon {
+    a {
+      font-weight: normal;
+      padding: 10px;
+    }
+  } 
   a:hover {
     color: #fff;
   }

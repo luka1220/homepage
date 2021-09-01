@@ -7,6 +7,8 @@ import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import "katex/dist/katex.min.css"
+
 const styles = {
   "article blockquote": {
     "background-color": "cardBg",
@@ -75,7 +77,6 @@ const Post = ({ data, pageContext }) => {
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
   const { previous, next } = pageContext
-
   let props = {
     previous,
     next,
@@ -88,7 +89,7 @@ const Post = ({ data, pageContext }) => {
         description={
           frontmatter.description ? frontmatter.description : excerpt
         }
-        image={Image.images.fallback.src}
+        image={Image !== "" ? Image.images.fallback.src : ""}
         article={true}
       />
       <article className="blog-post">

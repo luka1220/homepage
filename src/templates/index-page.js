@@ -3,17 +3,11 @@ import { jsx } from "theme-ui"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { RiArrowRightSLine } from "react-icons/ri"
-import {
-  RiTwitterFill,
-  RiLinkedinBoxFill,
-  RiGithubFill,
-  RiMediumFill
-} from "react-icons/ri"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import Seo from "../components/seo"
-import Icons from "../util/socialmedia.json"
+import socialIcons from "../components/socialIcons"
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -66,40 +60,7 @@ const HomePage = ({ data }) => {
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
-  const sIcons = Icons.socialIcons.map((icons, index) => {
-    return (
-      <div key={"social icons" + index}>
-        {icons.icon === "twitter" ? (
-          <a href={icons.url}>
-            <RiTwitterFill />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "linkedin" ? (
-          <a href={icons.url}>
-            <RiLinkedinBoxFill />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "github" ? (
-          <a href={icons.url} >
-            <RiGithubFill />
-          </a>
-        ) : (
-          ""
-        )}
-        {icons.icon === "medium" ? (
-          <a href={icons.url}>
-            <RiMediumFill />
-          </a>
-        ) : (
-          ""
-        )}
-      </div>
-    )
-  })
+  
   return (
     <Layout>
       <Seo />
@@ -141,10 +102,10 @@ const HomePage = ({ data }) => {
           <div
             className="social-icons"
             sx={{
-              variant: "variants.socialIcons",
+            variant: "variants.socialIcons",
             }}
-          >
-            {sIcons}
+            >
+            {socialIcons}
           </div>
         </div>
         <div>

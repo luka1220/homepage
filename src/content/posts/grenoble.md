@@ -21,5 +21,5 @@ Ich empfehle den Fromage aus der Region zu probieren, ich war zuvor vegan, but t
 Bezüglich Wein, wir sind in Frankreich, empfehle ich ein paar Wein Boutiquen auszuprobieren, dort bekommt man für 5-12€ tollen Wein, (auch in der Fromagerie Les Alpages gibt es guten Wein). Im Supermarkt kann man schnell mal daneben greifen und der Geschmack ist oft weniger spannend. Je nach dem was man sucht. Wein unter 2,5€ ist tendenziell fürs kochen gedacht. Empfehlen möchte ich zudem die Weinbar Les Enfants Terribles in Saint Bruno. 
 Letzte Empfehlung es gibt einigen Musik Veranstaltungen und Festival im Sommer die sich lohnen z.B. Magic Bus Festival. 
 
-![Royal Mail](/assets/cycling.png "Royal Mail from Unsplash")
+![Royal Mail](/assets/grenoble-city.jpeg "Street Art in Grenoble")
 
