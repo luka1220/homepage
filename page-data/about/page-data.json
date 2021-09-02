@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-about-page-js",
     "path": "/about",
-    "result": {"data":{"markdownRemark":{"id":"9b1014c1-bfd9-51cf-af9a-b3e284d8f53d","html":"<p>Hello</p>","excerpt":"Hello","frontmatter":{"title":"About"}}},"pageContext":{"id":"9b1014c1-bfd9-51cf-af9a-b3e284d8f53d","previous":{"id":"fbce9cc8-1018-5c7a-8a29-b07b313bdd15","frontmatter":{"slug":"/","template":"index-page","title":"Luka Stärk"}},"next":null}},
-    "staticQueryHashes": ["228695001","2744905544","358227665"]}
+    "result": {"data":{"markdownRemark":{"id":"9b1014c1-bfd9-51cf-af9a-b3e284d8f53d","html":"<p>Luka Stärk. Currently a Student in the last year of M.Sc. Computer Science at TU-Berlin. Permanently an enthusiast about cycling.</p>\n<p>My fields of interests in Computer Science are broadly speaking Algorithmics and Optimization, Intelligent Systems and Cryptology. In my last internship at the G-SCOP laboratory in Grenoble I work on new approximation algorithms for Feedback Vertex Set on Tournaments.</p>","excerpt":"Luka Stärk. Currently a Student in the last year of M.Sc. Computer Science at TU-Berlin. Permanently an enthusiast about cycling. My fields…","frontmatter":{"title":"About"}}},"pageContext":{"id":"9b1014c1-bfd9-51cf-af9a-b3e284d8f53d","previous":{"id":"fbce9cc8-1018-5c7a-8a29-b07b313bdd15","frontmatter":{"slug":"/","template":"index-page","title":"Luka Stärk"}},"next":null}},
+    "staticQueryHashes": ["228695001","2744905544","3050756635"]}
