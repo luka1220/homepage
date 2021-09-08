@@ -1,9 +1,9 @@
 {
   "name": "luka1220.github.io",
-  "homepage": "http://luka1220.github.io",
+  "homepage": "http://lukastaerk.github.io",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:luka1220/luka1220.github.io.git",
+  "repository": "git@github.com:lukastaerk/lukastaerk.github.io.git",
   "license": "MIT",
   "private": true,
   "description": "homepage",
