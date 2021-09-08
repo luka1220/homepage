@@ -8,15 +8,15 @@ import Theme from "../components/theme"
 const MenuItems = [
   {
     path: "/",
-    title: "Home",
+    title: "home",
   },
   {
     path: "/about",
-    title: "About",
+    title: "about",
   },
   {
     path: "/blog",
-    title: "Blog",
+    title: "blog",
   },
   /*{
     path: "/contact",

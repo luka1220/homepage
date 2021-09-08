@@ -6,7 +6,8 @@ import {
     RiTwitterFill,
     RiLinkedinBoxFill,
     RiGithubFill,
-    RiMediumFill
+    RiMediumFill,
+    RiMailFill
   } from "react-icons/ri"
 
 const socialIcons = Icons.socialIcons.map((icons, index) => {
@@ -36,6 +37,13 @@ const socialIcons = Icons.socialIcons.map((icons, index) => {
         {icons.icon === "medium" ? (
           <a href={icons.url}>
             <RiMediumFill />
+          </a>
+        ) : (
+          ""
+        )}
+        {icons.icon === "email" ? (
+          <a href={icons.url}>
+            <RiMailFill />
           </a>
         ) : (
           ""

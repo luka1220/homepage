@@ -1,75 +1,44 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Component } from "react"
-import { Index } from "elasticlunr"
+import { useState } from 'react'
+import { useFlexSearch } from 'react-use-flexsearch'
 import { Link } from "gatsby"
 import { RiSearchLine } from "react-icons/ri"
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { showSearch: false }
-    this.handleToggleClick = this.handleToggleClick.bind(this)
-    this.state = {
-      query: ``,
-      results: [],
-    }
-  }
-
-  handleToggleClick() {
-    this.setState(state => ({
-      showSearch: !state.showSearch,
-    }))
-  }
-
-  render() {
-    return (
-      <div sx={searchStyle.searchField}>
-        <div>
-          <button
-            onClick={this.handleToggleClick}
-            className={this.state.showSearch ? "search is-active" : "search"}
-          >
-            <RiSearchLine />
-          </button>
-          <div sx={searchStyle.search} className="search-container">
-            <input
-              type="text"
-              placeholder="Search"
-              value={this.state.query}
-              onChange={this.search}
-              className="search-input"
-            />
-            <ul sx={searchStyle.searchResults}>
-              {this.state.results.map(page => (
-                <li key={page.id}>
-                  {page.template === "blog-post" ? (
-                    <Link to={page.slug}>{page.title}</Link>
-                  ) : (
-                    ""
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+const Search = ({searchIndex, searchStore}) => {
+    const [showSearch, setShowSearch] = useState(false)
+    const [query, setQuery] = useState('')
+    const results = useFlexSearch(query, searchIndex, searchStore)
+  return (
+    <div sx={searchStyle.searchField}>
+      <div>
+        <button
+          onClick={()=>setShowSearch(!showSearch)}
+          className={showSearch ? "search is-active" : "search"}
+        >
+          <RiSearchLine />
+        </button>
+        <div sx={searchStyle.search} className="search-container">
+          <input
+            type="text"
+            placeholder="Search"
+            value={query}
+            onChange={({target})=>setQuery(target.value)}
+            className="search-input"
+          />
+          <ul sx={searchStyle.searchResults}>
+            {results.map(page => (
+              <li key={page.slug}>
+                {page.template === "blog-post" ?
+                  <Link to={page.slug}>{page.title}</Link> : ""
+                }
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    )
-  }
-
-  getOrCreateIndex = () =>
-    this.index ? this.index : Index.load(this.props.searchIndex)
-
-  search = evt => {
-    const query = evt.target.value
-    this.index = this.getOrCreateIndex()
-    this.setState({
-      query,
-      results: this.index
-        .search(query, {})
-        .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-    })
-  }
+    </div>
+  )
 }
 
 const searchStyle = {
@@ -174,3 +143,5 @@ const searchStyle = {
     },
   },
 }
+
+export default Search

@@ -1,24 +1,19 @@
 ---
 template: blog-post
-title: Parallel Programming Experiments on Sorting Algorithms
+title: Parallel Programming for Sorting Algorithms
 slug: /PAP_Lab2
 date: 2021-03-22T00:00:00.000Z
 description: Second Laboratory of Parallel Algorithms
-featuredImage: /assets/plots/mergequick.png
+featuredImage: /assets/plots/results-21-03-rand17-speedup.png
 ---
 
 # Introduction
 
-The experiments of the second Laboratory of Parallel Algorithms are
+The experiments of parallel sorting algorithms are
 conducted on a **e2-highcpu-32 (32 vCPUs, 32 GB)** instance of the GCP.
 
 ### Bubble Sort
-
-The sequential and parallel bubble sort algorithm is implemented as
-proposed. For the sequential algorithm we can reduce the inner for-loop
-each time by one, which gives only an small advantage. Anyhow the
-complexity is of $O(n^2)$.
-
+The sequential and parallel bubble sort algorithm is implemented in a standard manner. While the array is not sorted iterate over it and swap the values next to each other according to the order. The parallel version contains two for-loops, one for swaps from even to odd index and one from odd to even. The complexity is of $O(n^2)$.
 The parallel version splits the for-loop into a number of chunk that is
 equal to $T$ the maximal number of available threads. After the parallel
 for-loop, a sequential for-loop performs possible swap operations
@@ -32,7 +27,6 @@ operations is bound and thus the complexity stay in $O(n^2)$ and we can
 expect speed-ups using parallelism.
 
 ### Merge Sort
-
 The sequential merge sort has a complexity of $O(n~log~n)$. The parallel
 version of the recursive algorithm executes the two recursive calls in
 parallel with $omp$ $tasks$. Before merging the two, the sub-arrays have
@@ -50,14 +44,10 @@ similar running times.
 
 We modified the provided $merge$ function to use memory that is
 allocated in the beginning and given as second pointer argument, to not
-waist time on the initialisation of memory inside the $merger$ function.
+waist time on the initialization of memory inside the $merger$ function.
 This modification accelerated the merge sort overall.
 
 ### Odd Even Sort
-
-1.  Explain why the odd-even sort algorithm is more adapted than the
-    bubble sort algorithm for a parallel implementation.
-
 The odd-even sort algorithm is performing two for-loops, the first one
 only considering swap operations from even to odd indices and the second
 only from odd to even. Because the swap operations in the for-loops have
@@ -68,7 +58,6 @@ that splits the for-loop in $m$ equally large chunks corresponding to
 the $m$ threads.
 
 ### Quick sort
-
 The parallel quick sort algorithm splits the array in to a number of
 chunk corresponding to the maximal number of threads and applies quick
 sort in parallel on these sub-arrays. Then they are merge together in
@@ -82,8 +71,8 @@ variants and with our implementation of quicksort we achieve greater
 speedups and the sequential execution is fast by a factor of $1.4$ to
 $qsort$. As in the merge sort we us a threshold depending on the number
 of *omp-threads* to decide where or not to open new $tasks$:
-
-        threshold = N/num_threads;
+```
+    threshold = N/num_threads;
 
     void true_parallel_quick_sort(*T, lo, hi){
         if (hi - lo < threshold/4){
@@ -105,9 +94,9 @@ of *omp-threads* to decide where or not to open new $tasks$:
             true_parallel_quick_sort(T, j+1, hi); 
         }
     }
+```
 
 # Performance
-
 We compare the four different sorting algorithms in the following
 regarding their speedups and efficiency for increasing numbers of CPUs.
 The experiments are conducted with 2, 4, 8, 16, and 32 $openMP$ Threads
@@ -138,7 +127,6 @@ Figure
 <a href="#fig:running2" data-reference-type="ref" data-reference="fig:running2">6</a>.
 
 # Conclusion
-
 Evaluating the algorithms for speedups and total running time, the
 parallel quicksort outperforms in both categories. In general the
 results show that recursive algorithms can have an advantage over
@@ -150,7 +138,6 @@ all $n$ threads will continuously work until the array is sorted. The
 merge sort has such an dependency which sparks in Figure
 <a href="#fig:sppedrand29" data-reference-type="ref" data-reference="fig:sppedrand29">2</a>.
 Besides mergesort needs twice as much memory.
-
 Concerning the $O(n^2)$ algorithms, even-though it is more
 straightforward to implement a parallel odd-even sort then a parallel
 bubble sort, the speedup advantage of odd-even is small.

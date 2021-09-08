@@ -19,12 +19,11 @@ export const pageQuery = graphql`
 const AboutPage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
-
   return (
     <Layout className="page">
       <Seo title={frontmatter.title} description={excerpt} />
       <div className="wrapper">
-        <h1>{frontmatter.title}</h1>
+        {/*<h1>{frontmatter.title}</h1>*/}
         <article dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>

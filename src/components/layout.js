@@ -18,31 +18,32 @@ const query = graphql`
         siteTitle: title
       }
     }
-    siteSearchIndex {
+    localSearchPages {
       index
+      store
     }
   }
 `
 
 
 const Layout = ({ children, className, props }) => {
-  const { site, siteSearchIndex } = useStaticQuery(query)
-  const { siteTitle } = site.siteMetadata
+  const { /*site,*/ localSearchPages } = useStaticQuery(query)
+  // const { siteTitle } = site.siteMetadata
 
   return (
     <div className="primary-container">
       <Header>
-        <Logo title={siteTitle} />
+        {<Logo title={""} />}
         <div sx={layoutStyle.nav}>
           <div sx={{ display: ["flex", "flex", "flex", "none"] }}>
-            <Search searchIndex={siteSearchIndex.index} />
+            {
+            <Search searchIndex={localSearchPages.index} searchStore={localSearchPages.store} />
+            }
           </div>
           <Navigation />
         </div>
         <div sx={layoutStyle.appearance}>
-          {
-          //< Search searchIndex={siteSearchIndex.index} />
-          }
+          <Search searchIndex={localSearchPages.index} searchStore={localSearchPages.store} />
           <Theme />
         </div>
       </Header>

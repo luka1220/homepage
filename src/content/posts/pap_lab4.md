@@ -7,10 +7,11 @@ description: Parallel Algorithms and Programming LAB 4
 featuredImage: /assets/plots/animate_43.png
 ---
 
-# Introduction [introduction]
+# Introduction 
 
 The work for this lab presents six different parallel implementations of
-the CFD simulation and compares them for weak and strong scaling.
+the CFD (Computational Fluid Dynamic) simulation with [Open MPI](https://www.open-mpi.org/) and compares them for weak and strong scaling.
+There are different methods to simulate a fluid. This project is using an implementation of the Lattice Boltzmann Method (LBM) which is easy to parallelize in distributed memory systems. 
 
 # 1D Splitting
 
@@ -21,8 +22,7 @@ processes correspond to the sub-domains of the mash from left to right
 in increasing order. The processes communicate the continuous columns on
 the borders of the domain to their predecessor and successor.
 
-## Exercise 1 [exercise-1]
-
+**Exercise 1**.
 Two cases are distinguished here, the processes of rank 0 have no
 communication to the left and process with the highest rank, that is
 comm_size , to the right. Otherwise, processes receive first from the
@@ -32,15 +32,13 @@ dependency for the processes from 0 to comm_size , which should yield
 lower speed-ups. Let us see how it behaves later in section
 <a href="#sec:exp" data-reference-type="ref" data-reference="sec:exp">3</a>.
 
-## Exercise 2 [exercise-2]
-
+**Exercise 2**.
 With an odd-even distinction, the dependency path from Exercise 1 is
 decreased to the interdependence between processes of odd and even
 ranks. First, the processes with an even rank send and then receives
 from odd ranks. The edge cases are handled as in Exercise 1.
 
-## Exercise 3 [exercise-3]
-
+**Exercise 3**.
 To further decrease dependency the communication to the left and right
 processes is performed here with non-blocking communication. Once all
 four column exchanges to place independently of each other, the
@@ -71,8 +69,7 @@ Now that vertical row exchange will be implemented, which is
 non-continues memory here, 4 buffers are allocated to send and receive
 rows of the mash between sub-domains.
 
-## Exercise 4 [exercise-4]
-
+**Exercise 4**.
 For this exercise, the edge cases are handle by MPI_PROC_NULL as target
 rank in the communication. A function is therefore implemented get_rank
 that resolves the 2D coordinates of the sub-domains to the assigned rank
@@ -90,26 +87,22 @@ and from the buffer that is used to send and receive rows. For the
 communication odd and even coordinates are distinguished, for x and y
 even receives first and odd sends.
 
-## Exercise 5 [exercise-5]
-
+**Exercise 5**.
 MPI provides types for non-continuous memory, that are used here
 instead, and the perform_action function from exercise 4 is accordingly
 modified. The code becomes a little easier to read but we should not
 expect speedups, as MPI will not do any magic.
 
-## Exercise 6 [exercise-6]
-
+**Exercise 6**.
 Here the communication is performed non-blocking in two blocks first
 vertical, then horizontal, in between the communication is blocked with
 MPI_Waitall . This way the corner cells are correctly transferred.
 
-# Experiments [sec:exp]
+# Experiments: Scalability measurement
 
 The Experiments are performed with GCE on a cluster of 8 Instances of
 type **e2-highcpu-4** that have 4 vCPUs[^1] available. The maximum
 number of parallel processes to run is 32.
-
-## Exercise 7: Scalability measurement [exercise-7-scalability-measurement]
 
 Two scalability experiments are carried out for all six exercises.
 First, strong scaling on a constant mesh of size $980 \times 194$ which
@@ -129,16 +122,7 @@ The results for exercises 1 and 4 are not displayed as the legend in
 Figure
 <a href="#fig:exp" data-reference-type="ref" data-reference="fig:exp">1</a>
 indicates because they performed equally to exercise 2 and 5,
-respectively. For details compare Table
-<a href="#tab:1" data-reference-type="ref" data-reference="tab:1">[tab:1]</a>
-and
-<a href="#tab:2" data-reference-type="ref" data-reference="tab:2">[tab:2]</a>
-and Table
-<a href="#tab:4" data-reference-type="ref" data-reference="tab:4">[tab:4]</a>
-and
-<a href="#tab:5" data-reference-type="ref" data-reference="tab:5">[tab:5]</a>
-in the Appendix
-<a href="#sec:append" data-reference-type="ref" data-reference="sec:append">4</a>.
+respectively. 
 For the odd-even communication pattern in exercise 2, a speedup was
 expected compare to exercise 1 because the dependency chain is now
 reduced from comm_size to 2. This is true as much as the last process
@@ -162,11 +146,7 @@ on the left shows that the blocking and non-blocking implementation of
 to the fact that the communication in 1D happens in continuous memory,
 which is faster because of the extra copy operation for non-continuous
 memory. In addition, is the number of communicated cells mostly greater
-in the 2D splitting. Comparing Table
-<a href="#tab:2" data-reference-type="ref" data-reference="tab:2">[tab:2]</a>
-and
-<a href="#tab:5" data-reference-type="ref" data-reference="tab:5">[tab:5]</a>,
-its shows that the 1D splitting communicates (for 32 processes) a height
+in the 2D splitting. It was shown that the 1D splitting communicates (for 32 processes) a height
 of 450, and 2D splitting a height plus width of 400, where 286 cells are
 non-continuous memory. The 2D splitting could be further optimized,
 trying to keep the width shorter or equal to the height, minimizing
@@ -194,7 +174,7 @@ Notably, each MPI process runs on a virtual CPU where one core is
 hyperthreaded, that compute in parallel but shares resources such a
 memory[^2].
 
-# Conclusion [conclusion]
+# Conclusion
 
 The different implementations have illustrated various strategies to
 parallelize simulations. Even though the 1D non-blocking implementation

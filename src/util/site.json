@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Homepage",
+    "title": "Luka Stärk",
     "titleTemplate": "%s",
-    "description": "Homepage and Blog",
+    "description": "Personal Homepage",
     "siteUrl": "https://luka1220.github.io/about",
-    "image": "/assets/staerk-logo.png",
+    "image": "/assets/noun_bike_wheel.png",
     "iconimage": "/assets/noun_bike_wheel.png",
     "twitterUsername": "@Lu_Kitsch"
   },

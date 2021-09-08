@@ -61,7 +61,7 @@ const Pagination = props => (
           </Link>
         </li>
       )}
-      {Array.from({ length: props.numPages }, (_, i) => (
+      {(!props.isFirst && !props.isLast) && Array.from({ length: props.numPages }, (_, i) => (
         <li key={`pagination-number${i + 1}`}>
           <Link
             to={`${props.blogSlug}${i === 0 ? "" : i + 1}`}
@@ -116,7 +116,7 @@ class BlogIndex extends React.Component {
             "Stackrole base blog page " + currentPage + " of " + numPages
           }
         />
-        <h1>Blog</h1>
+        {/*<h1>Blog</h1>*/}
         <div className="grids col-1 sm-2 lg-3">{posts}</div>
         <Pagination {...props} />
       </Layout>
