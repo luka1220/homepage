@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-contact-page-js",
     "path": "/contact",
-    "result": {"data":{"markdownRemark":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","html":"","excerpt":"","frontmatter":{"title":"Get in touch"}},"site":{"siteMetadata":{"title":"Luka Stärk"}}},"pageContext":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","previous":{"id":"fbce9cc8-1018-5c7a-8a29-b07b313bdd15","frontmatter":{"slug":"/","template":"index-page","title":"Luka Stärk"}},"next":{"id":"9b1014c1-bfd9-51cf-af9a-b3e284d8f53d","frontmatter":{"slug":"/about","template":"about-page","title":"About"}}}},
+    "result": {"data":{"markdownRemark":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","html":"","excerpt":"","frontmatter":{"title":"Get in touch"}},"site":{"siteMetadata":{"title":"Luka Stärk"}}},"pageContext":{"id":"304d4cf6-ab33-5b0c-82d9-a37d9716e8a7","previous":{"id":"fbce9cc8-1018-5c7a-8a29-b07b313bdd15","frontmatter":{"slug":"/","template":"index-page","title":"Luka Stärk"}},"next":null}},
     "staticQueryHashes": ["228695001","2744905544","3050756635"]}
