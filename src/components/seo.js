@@ -14,7 +14,7 @@ const SEO = ({ title, description, image, article }) => {
     defaultDescription,
     siteUrl,
     defaultImage,
-    linkedIn,
+    twitterUsername,
   } = site.siteMetadata
   const seo = {
     title: title || defaultTitle,
@@ -49,8 +49,8 @@ const SEO = ({ title, description, image, article }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      {linkedIn && (
-        <meta name="twitter:creator" content={linkedIn} />
+      {twitterUsername && (
+        <meta name="twitter:creator" content={twitterUsername} />
       )}
 
       {seo.title && <meta name="twitter:title" content={seo.title} />}
@@ -89,7 +89,7 @@ const query = graphql`
         defaultDescription: description
         siteUrl: siteUrl
         defaultImage: image
-        linkedIn
+        twitterUsername
       }
     }
   }
