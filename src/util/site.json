@@ -5,8 +5,7 @@
     "description": "Personal Homepage",
     "siteUrl": "https://lukastaerk.github.io/about",
     "image": "/assets/noun_bike_wheel.png",
-    "iconimage": "/assets/noun_bike_wheel.png",
-    "twitterUsername": "@Lu_Kitsch"
+    "iconimage": "/assets/noun_bike_wheel.png"
   },
   "ga": "UA-XXXXXXXXX-X"
 }

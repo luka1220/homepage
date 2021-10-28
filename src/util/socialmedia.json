@@ -2,19 +2,15 @@
   "socialIcons": [
     {
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/luka-st%C3%A4rk-9794a4212/"
-    },
-    {
-      "icon": "twitter",
-      "url": "https://twitter.com/Lu_Kitsch"
+      "url": "https://www.linkedin.com/in/luka-staerk"
     },
     {
       "icon": "github",
-      "url": "https://github.com/luka1220"
+      "url": "https://github.com/lukastaerk"
     },
     {
       "icon": "email",
-      "url": "mailto: luka.staerk at mailbox.org"
+      "url": "mailto: luka.staerk@mailbox.org"
     }
   ]
 }
